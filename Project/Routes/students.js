@@ -44,7 +44,7 @@ router.put('/:id', async (req, res)=>{
          {name : req.body.name, lastname: req.body.lastname, Phone : req.body.Phone , isEnrolled : req.body.isEnrolled },
          {new : true})
 
-    if(!student) return res.status(404).send('The category with this ID was not found')
+    if(!student) return res.status(404).send('The student with the given ID was not found')
 
     res.send(student);
 });
@@ -55,7 +55,7 @@ router.put('/:id', async (req, res)=>{
 
 router.delete('/:id', async (req, res)=> {
     const student = await Student.findByIdAndRemove(req.params.id)
-    if(!student) return res.status(404).send('The category  with the given ID was not found');
+    if(!student) return res.status(404).send('The student  with the given ID was not found');
 
     
     res.send(student);
@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res)=> {
 
 router.get('/:id', async (req, res)=> {
     const student = await Student.findById(req.params.id)
-    if(!student) return res.status(404).send('The category with the ID was not found');
+    if(!student) return res.status(404).send('The student with the ID was not found');
 
     res.send(student);
 
