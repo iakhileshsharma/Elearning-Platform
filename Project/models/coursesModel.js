@@ -10,7 +10,7 @@ const Course = mongoose.model('Course', new mongoose.Schema({
         required : true,
         trim : true,
         minlength : 5,
-        maxlength : 200
+        maxlength : 250
     },
     category : {
        type : categorySchema,
